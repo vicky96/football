@@ -1,0 +1,4 @@
+<!--pages/mine/mine.wxml-->
+<import src="../../utils/template/footer.wxml"/>
+<text>mine</text>
+ <template is="footer" data="{{footIndex}}"></template>

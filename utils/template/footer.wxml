@@ -1,0 +1,27 @@
+<template name="footer">
+    <view class="foot">
+        <navigator class="foot-list {{footIndex==0?'foot-active':''}}" url="/pages/index/index" open-type='redirect'>
+        <text class="iconfont icon-shouye-shouye"></text>
+        <text class="foot-font">首页</text>
+        </navigator>
+        <navigator class="foot-list {{footIndex==1?'foot-active':''}}" url="/pages/search/search" open-type='redirect'>
+        <text class="iconfont icon-fangdajing"></text>
+        <text class="foot-font">发现</text>
+        </navigator>
+        <navigator class="foot-list camera {{footIndex==2?'foot-active':''}}" url="/pages/index/index" open-type='redirect'>
+        <text class="iconfont icon-zhaoxiangji"></text>
+        </navigator>
+        <navigator class="foot-list" url="/pages/index/index">
+        
+        <text class="foot-font">首页</text>
+        </navigator>
+        <navigator class="foot-list {{footIndex==3?'foot-active':''}}" url="/pages/mine/mine" open-type='redirect'>
+        <text class="iconfont icon-wode"></text>
+        <text class="foot-font">我的</text>
+        </navigator>
+        <navigator class="foot-list {{footIndex==4?'foot-active':''}}" url="/pages/index/index" open-type='redirect'>
+        <text class="iconfont icon-tuichu"></text>
+        <text class="foot-font">退出</text>
+        </navigator>
+    </view>
+</template>

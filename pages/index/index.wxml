@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<import src="../../utils/template/footer.wxml"/>
+<view class="container">
+ <view class="head">
+		<view class="head-title head-left head-active">
+			<text>热点</text>
+		</view>
+    <view class="head-title head-right">
+			<text>关注</text>
+		</view>
+	</view>
+
+  <view class="nav">
+    <view class="nav-list {{navIndex==0?'nav-active':''}}" bindtap="change" data-index="0" hover hover-class="nav-hover">足球现场</view>
+    <view class="nav-list {{navIndex==1?'nav-active':''}}" bindtap="change" data-index="1"  hover-class="nav-hover">足球生活</view>
+    <view class="nav-list {{navIndex==2?'nav-active':''}}" bindtap="change" data-index="2"  hover-class="nav-hover">足球美女</view>
+  </view>
+
+  <view class="content">
+    <swiper class="swi" bindchange="swiperChange" current="{{navIndex}}">
+      <block>
+      <!--现场-->
+        <swiper-item style="overflow-y:scroll">
+          <scroll-view scroll-y="true" class="scr" bindscrolltolower="lower" bindscrolltoupper="upper" scroll-top="{{top}}">
+            <view class="more" wx:if="{{hide}}">update...</view>
+            <view class="items">
+            <view class="items-list" wx:for="{{lists}}" wx:key="{{index}}">
+              <view class="img-box">
+                <image src="{{item.img}}" class="img"></image>
+              </view>
+              <text class="font">{{item.font}}</text>
+            </view>
+          </view>
+          <view wx:if="{{hide}}" class="more">more...</view>
+          </scroll-view>
+           
+        </swiper-item>
+        <!--生活-->
+        <swiper-item style="overflow-y:scroll">
+           <view class="items">
+            <view class="items-list" wx:for="{{lists}}" wx:key="{{index}}">
+              <view class="img-box">
+                <image src="{{item.img}}" class="img"></image>
+              </view>
+              <text class="font">{{item.font}}</text>
+            </view>
+          </view>
+        </swiper-item>
+        <!--美女-->
+        <swiper-item style="overflow-y:scroll">
+           <view class="items">
+            <view class="items-list" wx:for="{{lists}}" wx:key="{{index}}">
+              <view class="img-box">
+                <image src="{{item.img}}" class="img"></image>
+              </view>
+              <text class="font">{{item.font}}</text>
+            </view>
+          </view>
+        </swiper-item>    
+      </block> 
+    </swiper>
+  </view>
+
+  <template is="footer" data="{{footIndex}}"></template>
+</view>

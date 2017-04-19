@@ -1,0 +1,4 @@
+<!--pages/search/search.wxml-->
+<import src="../../utils/template/footer.wxml"/>
+<text>search</text>
+ <template is="footer" data="{{footIndex}}"></template>
